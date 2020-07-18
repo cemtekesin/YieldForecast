@@ -18,7 +18,7 @@ for i in Date_List:
     Date_Urls.append(root+str(i)+root_end)
 
 for i,j in zip(Date_Urls,Date_List):
-    urllib.request.urlretrieve(i, './Data/'+str(j)+root_end)
+    urllib.request.urlretrieve(i, './Data/Precip/'+str(j)+root_end)
 
 #Apparently link needs to be changed to png from gif
 Years2 = ['2019', '2020']
@@ -36,4 +36,21 @@ for i in Date_List2:
 
 for i,j in zip(Date_Urls2,Date_List2):
     urllib.request.urlretrieve(i, './Data/'+str(j)+root_end2)
+
+#Following part for temperature data
+temp_root='https://www.ncdc.noaa.gov/monitoring-content/sotc/national/grid-temp/tave-anom-'
+Date_Urls=[]
+for i in Date_List:
+    Date_Urls.append(temp_root+str(i)+root_end)
+
+for i,j in zip(Date_Urls,Date_List):
+    urllib.request.urlretrieve(i, './Data/Temperature/'+str(j)+root_end)
+
+
+Date_Urls2=[]
+for i in Date_List2:
+    Date_Urls2.append(temp_root+str(i)+root_end2)
+
+for i,j in zip(Date_Urls2,Date_List2):
+    urllib.request.urlretrieve(i, './Data/Temperature/'+str(j)+root_end2)
 
